@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { Container, Card } from 'react-bootstrap';
+import './style.css'; 
+import Name from './components/Name';
+import Price from './components/Price';
+import Description from './components/Description';
+import Image from './components/Image';
 
-function App() {
+const firstName = 'Wassim Mourali';
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container className="container">
+      <Card className="product-card">
+        <Card.Body>
+          <Card.Title>Produits Industriels</Card.Title>
+          <Image />
+          <Name />
+          <Price />
+          <Description />
+        </Card.Body>
+      </Card>
+      <p className="message">
+        Hello, {firstName}
+      </p>
+      {firstName && (
+        <img
+          src="https://gomycodelearn.blob.core.windows.net/profiles/4bfddd44-d290-4037-8f26-a4370be3f585-133537619460009088.jpg"
+          alt="Profile"
+          className="profile"
+        />
+      )}
+    </Container>
   );
-}
+};
 
 export default App;
